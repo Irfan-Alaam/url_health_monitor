@@ -1,0 +1,84 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+
+# =========================
+# Django
+# =========================
+*.log
+db.sqlite3
+/db.sqlite3
+/media/
+/staticfiles/
+/static/
+*.pot
+*.pyc
+
+# Django secret / env
+.env
+.env.*
+!.env.example
+
+# Migrations (optional: keep if you want full reproducibility)
+# */migrations/*.pyc
+# */migrations/__pycache__/
+
+# =========================
+# Celery
+# =========================
+celerybeat-schedule
+celerybeat.pid
+*.pid
+
+# Celery / worker logs
+celery.log
+worker.log
+
+# =========================
+# Redis
+# =========================
+dump.rdb
+appendonly.aof
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Testing / Coverage
+# =========================
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# =========================
+# Docker (optional)
+# =========================
+docker-compose.override.yml
