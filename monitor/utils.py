@@ -1,14 +1,11 @@
-#Status calculation logic
-from django.core.validators import URLValidator
-from django.core.exceptions import ValidationError
-
+from .config import LIMIT
 class MonitorStatus:
     UP="UP"
     DOWN="DOWN"
     DEGRADED="DEGRADED"
     UNKNOWN="UNKNOWN"
 def calculate_monitor_status(monitor):
-    latest_checks=monitor.get_latest_checks(limit=3)
+    latest_checks=list(monitor.results.all()[:LIMIT])
     check_count=len(latest_checks)
     if check_count<3:
         return MonitorStatus.UNKNOWN
@@ -19,11 +16,3 @@ def calculate_monitor_status(monitor):
         return MonitorStatus.DOWN
     else:
         return MonitorStatus.DEGRADED
-
-def validate_url(url):
-    validator=URLValidator(schemes=['http','https'])
-    try:
-        validator(url)
-        return True
-    except ValidationError:
-        return False

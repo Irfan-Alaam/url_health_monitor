@@ -35,10 +35,6 @@ class URLMonitorSerializer(serializers.ModelSerializer):
                 )
         return value
 
-class URLMonitorCreateSerializer(URLMonitorSerializer):
-    class Meta(URLMonitorSerializer.Meta):
-        pass
-
 class URLMonitorListSerializer(serializers.ModelSerializer):
     current_status=serializers.SerializerMethodField()
     last_checked_at=serializers.SerializerMethodField()
@@ -60,7 +56,7 @@ class URLMonitorListSerializer(serializers.ModelSerializer):
         return last_check.checked_at if last_check else None
         
     def get_total_checks(self,obj):
-        return obj.health_checks.count()
+        return obj.results.count()
     
 class HealthCheckResultSerializer(serializers.ModelSerializer):
     monitor_name=serializers.CharField(source='monitor.name',read_only=True)
@@ -69,7 +65,7 @@ class HealthCheckResultSerializer(serializers.ModelSerializer):
         model=HealthCheckResult
         fields=[
             'id','monitor','monitor_name','status_code',
-            'response_time_ms','is_success','errpr_message',
+            'response_time_ms','is_success','error_message',
             'checked_at'
         ]
         read_only_fields=fields

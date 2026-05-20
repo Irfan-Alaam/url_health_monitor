@@ -1,0 +1,1 @@
+LIMIT=3 #Max number checks to determine current status
