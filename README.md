@@ -196,19 +196,9 @@ python manage.py check_urls
 python manage.py test monitors
 
 ---
-## Testing result evaluated using coverage
+## Testing using coverage
 coverage run manage.py test
 coverage report 
-<img width="625" height="654" alt="image" src="https://github.com/user-attachments/assets/2ad5d995-faf9-4387-94b0-d5ad8242bc50" />
-
----
-#Sample API Output
-<img width="592" height="328" alt="image" src="https://github.com/user-attachments/assets/580fcd61-f5f9-41cc-88f7-30922baaae53" />
-
----
-#Sample Table postgres DB 
-<img width="1546" height="401" alt="image" src="https://github.com/user-attachments/assets/88a45d65-93be-4255-b915-18bd2b3f17b3" />
-<img width="1376" height="655" alt="image" src="https://github.com/user-attachments/assets/de6a431c-2209-481e-8db4-29fd205e1206" />
 
 ---
 ## AI Support
