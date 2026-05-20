@@ -195,10 +195,18 @@ python manage.py check_urls
 # All tests
 python manage.py test monitors
 
-# With coverage for better overview
+---
+## Testing result evaluated using coverage
 coverage run manage.py test
-```
-
+coverage report 
+![alt text](image.png)
+---
+#Sample API Output
+![alt text](image-1.png)
+---
+#Sample Table postgres DB 
+![alt text](image-2.png)
+![alt text](image-3.png)
 ---
 ## AI Support
 
