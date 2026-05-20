@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import URLMonitor,HealthCheckResult
 from .utils import calculate_monitor_status
-from django.core.validators import URLValidator,MinValueValidator
+
 
 class URLMonitorSerializer(serializers.ModelSerializer):
     current_status=serializers.SerializerMethodField()
